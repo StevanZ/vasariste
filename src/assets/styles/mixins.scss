@@ -9,7 +9,7 @@ $breakpoints: (
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
     // Prints a media query based on the value
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
   }
@@ -31,6 +31,20 @@ $breakpoints: (
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin flex-column-start {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @mixin flex-center-space-between {

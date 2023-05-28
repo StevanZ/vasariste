@@ -1,11 +1,5 @@
-import Header from '../header/Header';
-
 const Content = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <div>Content...</div>;
 };
 
 export default Content;

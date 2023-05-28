@@ -1,11 +1,13 @@
 @import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
 
 .header {
   background-color: #f5f5dc;
-  height: 50px;
+  height: $header-height;
   @include flex-center-center;
   position: relative;
   padding: 0 10px;
+  z-index: 1;
 
   .logo {
     height: 100%;
@@ -15,19 +17,25 @@
     background-size: cover;
     position: absolute;
     left: 0;
+
+    @include respond-to('large') {
+      width: 220px;
+    }
   }
 
   .nav-elements {
     max-width: 1200px;
     height: 100%;
-    width: 100%;
+    width: 800px;
     @include reset-list;
     @include flex-center-space-between;
-    margin-left: 300px;
-    display: none;
 
     @include respond-to('small') {
-      display: flex;
+      display: none;
+    }
+
+    @include respond-to('large') {
+      margin-left: 200px;
     }
 
     .nav-el {
@@ -69,12 +77,12 @@
   }
 
   .hamburger-menu {
-    display: block;
+    display: none;
     position: absolute;
     right: 10px;
 
     @include respond-to('small') {
-      display: none;
+      display: block;
     }
   }
 }
